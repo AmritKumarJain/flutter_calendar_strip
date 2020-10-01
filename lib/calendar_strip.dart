@@ -114,7 +114,7 @@ class CalendarStripState extends State<CalendarStrip>
   void didUpdateWidget(CalendarStrip oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.selectedDate != oldWidget.selectedDate &&
-        widget.selectedDate != null &&
+        widget.selectedDate != null && widget.selectedDate != 0 && //updated if else
         (isDateBefore(widget.selectedDate, widget.startDate) ||
             isDateAfter(widget.selectedDate, widget.endDate))) {
       throw Exception("Selected Date is out of range from start and end dates");
